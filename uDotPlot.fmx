@@ -1,0 +1,2191 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'DotPlot v0.20 '#946
+  ClientHeight = 822
+  ClientWidth = 1024
+  Constraints.MinHeight = 640.000000000000000000
+  Constraints.MinWidth = 560.000000000000000000
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object loTop: TLayout
+    Align = Top
+    Margins.Left = 8.000000000000000000
+    Margins.Top = 4.000000000000000000
+    Margins.Right = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 36.000000000000000000
+    Size.Width = 1008.000000000000000000
+    Size.Height = 216.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object memoSummary: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
+      StyledSettings = [Size, Style, FontColor]
+      TextSettings.Font.Family = 'Courier New'
+      Align = Right
+      Position.X = 769.000000000000000000
+      Size.Width = 239.000000000000000000
+      Size.Height = 216.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      ParentShowHint = False
+      ShowHint = True
+      Viewport.Width = 235.000000000000000000
+      Viewport.Height = 212.000000000000000000
+    end
+    object spMemo: TSplitter
+      Align = Right
+      Cursor = crHSplit
+      MinSize = 200.000000000000000000
+      Margins.Left = 1.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Position.X = 762.000000000000000000
+      Size.Width = 6.000000000000000000
+      Size.Height = 216.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Grid1: TGrid
+      Align = Client
+      CanFocus = True
+      ClipChildren = True
+      Size.Width = 761.000000000000000000
+      Size.Height = 216.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Options = [AlternatingRowBackground, ColumnResize, ColLines, RowLines, AlwaysShowSelection, Header, HeaderClick, AutoDisplacement]
+      OnGetValue = Grid1GetValue
+      Viewport.Width = 757.000000000000000000
+      Viewport.Height = 191.000000000000000000
+    end
+    object lbEntry: TListBox
+      Align = Left
+      Size.Width = 200.000000000000000000
+      Size.Height = 272.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Visible = False
+      OnMouseDown = lbEntryMouseDown
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      Viewport.Width = 196.000000000000000000
+      Viewport.Height = 268.000000000000000000
+    end
+    object spEntry: TSplitter
+      Align = Left
+      Cursor = crHSplit
+      MinSize = 200.000000000000000000
+      Margins.Left = 1.000000000000000000
+      Margins.Right = 1.000000000000000000
+      Position.X = 1.000000000000000000
+      Size.Width = 6.000000000000000000
+      Size.Height = 272.000000000000000000
+      Size.PlatformDefault = False
+      Visible = False
+    end
+  end
+  object loLeft: TLayout
+    Align = Left
+    Margins.Left = 4.000000000000000000
+    Position.X = 4.000000000000000000
+    Position.Y = 260.000000000000000000
+    Size.Width = 322.000000000000000000
+    Size.Height = 562.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object sbSettings: TVertScrollBox
+      Align = Client
+      Size.Width = 322.000000000000000000
+      Size.Height = 542.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnClick = sbSettingsClick
+      OnCalcContentBounds = sbSettingsCalcContentBounds
+      Viewport.Width = 306.000000000000000000
+      Viewport.Height = 542.000000000000000000
+      object loSize: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lbSize: TLabel
+          AutoSize = True
+          Locked = True
+          Position.Y = 4.000000000000000000
+          Size.Width = 24.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.WordWrap = False
+          TextSettings.Trimming = None
+          Text = 'Size:'
+          TabOrder = 0
+        end
+        object edWidth: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          AutoSelect = True
+          ReturnKeyType = Done
+          MaxLength = 8
+          Text = '960'
+          Position.X = 60.000000000000000000
+          Locked = True
+          Hint = 'Picture width'
+          Size.Width = 56.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Picture width'
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = edSettingsChange
+        end
+        object lbSizeX: TLabel
+          Locked = True
+          Position.X = 114.000000000000000000
+          Position.Y = 4.000000000000000000
+          Size.Width = 16.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          TextSettings.Trimming = None
+          Text = #215
+          TabOrder = 2
+        end
+        object edHeight: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          AutoSelect = True
+          ReturnKeyType = Done
+          MaxLength = 8
+          Text = '800'
+          Position.X = 128.000000000000000000
+          Locked = True
+          Hint = 'Picture height'
+          Size.Width = 56.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Picture height'
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = edSettingsChange
+        end
+        object btnAutoSize: TButton
+          Hint = 'Change image size to default'
+          Locked = True
+          Position.X = 184.000000000000000000
+          Size.Width = 22.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = #10039
+          TextSettings.Trimming = None
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btnAutoSizeClick
+        end
+        object btnDecreaseWidth: TButton
+          Hint = 'Decrease width'
+          Locked = True
+          Position.X = 208.000000000000000000
+          Size.Width = 22.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          Text = '-'
+          TextSettings.Trimming = None
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btnDecreaseWidthClick
+        end
+        object btnIncreaseWidth: TButton
+          Hint = 'Increase width'
+          Locked = True
+          Position.X = 230.000000000000000000
+          Size.Width = 22.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          Text = '+'
+          TextSettings.Trimming = None
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btnIncreaseWidthClick
+        end
+        object cbLockSize: TCheckBox
+          Locked = True
+          Hint = 'Lock size and range and prevent auto changes'
+          Position.X = 264.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+          Text = 'Lock'
+          ParentShowHint = False
+          ShowHint = True
+        end
+      end
+      object loYRange: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 30.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        object lbYRange: TLabel
+          AutoSize = True
+          Locked = True
+          Position.Y = 3.000000000000000000
+          Size.Width = 43.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.WordWrap = False
+          TextSettings.Trimming = None
+          Text = 'Y range:'
+          TabOrder = 0
+        end
+        object edLowY: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          AutoSelect = True
+          ReturnKeyType = Done
+          MaxLength = 20
+          Text = '-80'
+          Position.X = 60.000000000000000000
+          Locked = True
+          Hint = 'Minimum of Y'
+          Size.Width = 56.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Minimum of Y'
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = edSettingsChange
+        end
+        object lbYRangeTo: TLabel
+          Locked = True
+          Position.X = 114.000000000000000000
+          Position.Y = 3.000000000000000000
+          Size.Width = 16.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          TextSettings.Trimming = None
+          Text = '-'
+          TabOrder = 2
+        end
+        object edHighY: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 3
+          AutoSelect = True
+          ReturnKeyType = Done
+          MaxLength = 20
+          Text = '80'
+          Position.X = 128.000000000000000000
+          Locked = True
+          Hint = 'Maximum of Y'
+          Size.Width = 56.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Maximum of Y'
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = edSettingsChange
+        end
+        object btnAuoRange: TButton
+          Hint = 'Change Y range and step to default'
+          Locked = True
+          Position.X = 184.000000000000000000
+          Size.Width = 22.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = #10039
+          TextSettings.Trimming = None
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btnAuoRangeClick
+        end
+        object btnDecreaseSteps: TButton
+          Hint = 'Decrease Y step'
+          Locked = True
+          Position.X = 266.000000000000000000
+          Size.Width = 22.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          Text = '-'
+          TextSettings.Trimming = None
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btnDecreaseStepsClick
+        end
+        object btnIncreaseSteps: TButton
+          Hint = 'Increase Y step'
+          Locked = True
+          Position.X = 288.000000000000000000
+          Size.Width = 22.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          Text = '+'
+          TextSettings.Trimming = None
+          ParentShowHint = False
+          ShowHint = True
+          OnClick = btnIncreaseStepsClick
+        end
+        object edYSteps: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 5
+          AutoSelect = True
+          ReturnKeyType = Done
+          MaxLength = 20
+          Text = '40'
+          Position.X = 208.000000000000000000
+          Locked = True
+          Hint = 'Unit of tick marks'
+          Size.Width = 56.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Tick mark'
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = edSettingsChange
+        end
+      end
+      object loFont: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 60.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object lbFont: TLabel
+          AutoSize = True
+          Locked = True
+          Position.Y = 3.000000000000000000
+          Size.Width = 36.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.WordWrap = False
+          TextSettings.Trimming = None
+          Text = 'Labels:'
+          TabOrder = 14
+        end
+        object cbFont: TComboBox
+          DropDownCount = 20
+          Locked = True
+          Hint = 'Type of error bars to show'
+          Items.Strings = (
+            'None'
+            'Helvetica'
+            'Arial'
+            'Calibri'
+            'Cambria'
+            'Times New Roman')
+          ItemIndex = 1
+          Position.X = 60.000000000000000000
+          Size.Width = 136.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 22
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = cbFontChange
+        end
+        object tbFontSize: TTrackBar
+          CanParentFocus = True
+          Frequency = 1.000000000000000000
+          Locked = True
+          Hint = 'Thickness of error bars'
+          Max = 50.000000000000000000
+          Min = 12.000000000000000000
+          Orientation = Horizontal
+          Position.X = 210.000000000000000000
+          Size.Width = 100.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Value = 38.000000000000000000
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = tbSettingsChange
+          OnTracking = tbFontSizeChange
+          OnClick = tbSettingsClick
+        end
+      end
+      object loErrorBar: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 120.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 56.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        object lbErrorBar: TLabel
+          AutoSize = True
+          Locked = True
+          Position.Y = 1.000000000000000000
+          Size.Width = 49.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.WordWrap = False
+          TextSettings.Trimming = None
+          Text = 'Error bar:'
+          TabOrder = 0
+        end
+        object tbErrorBarLine: TTrackBar
+          CanParentFocus = True
+          Frequency = 0.250000000000000000
+          Locked = True
+          Hint = 'Thickness of error bars'
+          Max = 8.000000000000000000
+          Min = 0.250000000000000000
+          Orientation = Horizontal
+          Position.X = 210.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 100.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Value = 3.000000000000000000
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = tbSettingsChange
+          OnTracking = edSettingsChange
+          OnClick = tbSettingsClick
+        end
+        object cbErrorBar: TComboBox
+          DropDownCount = 20
+          Locked = True
+          Hint = 'Type of error bars to show'
+          Items.Strings = (
+            'No error bars'
+            'Mean (N, repeats)'
+            'Mean '#177' SD (N, repeats)'
+            'Mean '#177' SEM (N, repeats)'
+            'Mean (n, all points)'
+            'Mean '#177' SD (n, all points)'
+            'Mean '#177' SE (n, all points)'
+            'Boxplot, 1.5 IQR (all points)'
+            'Boxplot, Min & Max (all points)')
+          ItemIndex = 3
+          Position.X = 60.000000000000000000
+          Size.Width = 250.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = drawSettingsChange
+        end
+        object cbBlackErrorBars: TCheckBox
+          Locked = True
+          Hint = 'Use black color, instead of symbol color for error bars'
+          IsChecked = True
+          Position.X = 142.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 56.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'Black'
+          OnChange = cbSameSizeChange
+        end
+        object cbSingleErrorbar: TCheckBox
+          Locked = True
+          Hint = 'Use black color, instead of symbol color for error bars'
+          Position.X = 60.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 68.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'One side'
+          OnChange = cbSameSizeChange
+        end
+      end
+      object expdLines: TExpander
+        Align = Top
+        Padding.Bottom = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.Y = 672.000000000000000000
+        ShowCheck = False
+        Size.Width = 302.000000000000000000
+        Size.Height = 134.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Line settings'
+        TabOrder = 13
+        ContentSize = '109'
+        object loAxis: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 16
+          object lbAxis: TLabel
+            AutoSize = True
+            Locked = True
+            Position.Y = 3.000000000000000000
+            Size.Width = 46.500000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Axis line:'
+            TabOrder = 0
+          end
+          object tbAxisLine: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.250000000000000000
+            Locked = True
+            Hint = 'Thickness of axis lines'
+            Max = 8.000000000000000000
+            Min = 0.250000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 2.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+          end
+          object ccbAxis: TComboColorBox
+            Color = claBlack
+            Locked = True
+            Hint = 'Axis line color, right click to choose from preset colors'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+        end
+        object loGrid: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 60.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 15
+          object tbGridLine: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.250000000000000000
+            Locked = True
+            Hint = 'Thickness of grid lines'
+            Max = 8.000000000000000000
+            Min = 0.250000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 1.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+          end
+          object ccbGrid: TComboColorBox
+            Color = claDarkgray
+            Locked = True
+            Hint = 'Grid line color, right click to choose from preset colors'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object cbDrawGrid: TCheckBox
+            Locked = True
+            Hint = 'Check to draw horizontal grid lines'
+            Margins.Left = 8.000000000000000000
+            Margins.Right = 8.000000000000000000
+            Position.Y = 1.000000000000000000
+            Size.Width = 112.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'Show grid line:'
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+          object cbShowMidlines: TCheckBox
+            Locked = True
+            Hint = 'Show mid-lines of each subgroup'
+            Position.Y = 24.000000000000000000
+            Size.Width = 140.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Show mid-lines'
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+        end
+        object loTick: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 13
+          object lbTick: TLabel
+            AutoSize = True
+            Locked = True
+            Position.Y = 3.000000000000000000
+            Size.Width = 45.500000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Tick line:'
+            TabOrder = 0
+          end
+          object tbTickLine: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.250000000000000000
+            Locked = True
+            Hint = 'Thickness of tick marks'
+            Max = 8.000000000000000000
+            Min = 0.250000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 2.000000000000000000
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+          end
+          object ccbTick: TComboColorBox
+            Color = claBlack
+            Locked = True
+            Hint = 'Tick mark color, right click to choose from preset colors'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+        end
+      end
+      object ccbShared: TColorComboBox
+        DropDownKind = Custom
+        Color = claNull
+        DisableFocusEffect = False
+        DropDownCount = 20
+        Locked = True
+        ItemIndex = 147
+        Position.X = 80.000000000000000000
+        Position.Y = 140.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Visible = False
+        OnChange = ccbSharedChange
+        OnExit = ccbSharedExit
+      end
+      object expdColumn: TExpander
+        Align = Top
+        Padding.Bottom = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.Y = 567.000000000000000000
+        ShowCheck = True
+        Size.Width = 302.000000000000000000
+        Size.Height = 105.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Column'
+        TabOrder = 11
+        OnCheckChange = drawSettingsChange
+        ContentSize = '80'
+        object loCoumnSettings: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 86.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 9
+          object cbBlackColumnLine: TCheckBox
+            Locked = True
+            Hint = 'Use black color, instead of symbol color for column borders'
+            IsChecked = True
+            Position.X = 144.000000000000000000
+            Size.Width = 60.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 8
+            Text = 'Black'
+            OnChange = cbSameSizeChange
+          end
+          object cbOverrideColumn: TCheckBox
+            Locked = True
+            Hint = 'Override colors of columns/dots'
+            IsChecked = True
+            Margins.Left = 8.000000000000000000
+            Margins.Right = 8.000000000000000000
+            Position.Y = 26.000000000000000000
+            Size.Width = 120.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Override color:'
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+          object ccbColumnFill: TComboColorBox
+            Color = claDarkgray
+            Locked = True
+            Hint = 'Grid line color, right click to choose from preset colors'
+            Position.X = 144.000000000000000000
+            Position.Y = 26.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 7
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object lbColumnLine: TLabel
+            AutoSize = True
+            Locked = True
+            Position.Y = 1.000000000000000000
+            Size.Width = 83.000000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Column border:'
+            TabOrder = 2
+          end
+          object tbColumnLine: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.250000000000000000
+            Locked = True
+            Hint = 'Thickness of column border'
+            Max = 8.000000000000000000
+            Min = 0.250000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 6
+            Value = 2.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object tbGradient: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.010000000000000000
+            Locked = True
+            Hint = 'Thickness of column border'
+            Max = 1.000000000000000000
+            Min = -1.000000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 54.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object tbOpacity: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.010000000000000000
+            Locked = True
+            Hint = 'Thickness of column border'
+            Max = 1.000000000000000000
+            Orientation = Horizontal
+            Position.X = 50.000000000000000000
+            Position.Y = 54.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object lbOpacity: TLabel
+            AutoSize = True
+            Locked = True
+            Position.Y = 54.000000000000000000
+            Size.Width = 41.000000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Opactiy'
+            TabOrder = 1
+          end
+          object lbGradient: TLabel
+            AutoSize = True
+            Locked = True
+            Position.X = 156.000000000000000000
+            Position.Y = 54.000000000000000000
+            Size.Width = 46.000000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Gradient'
+            TabOrder = 0
+          end
+        end
+      end
+      object expdSubgroups: TExpander
+        Align = Top
+        Padding.Bottom = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.Y = 305.000000000000000000
+        ShowCheck = False
+        Size.Width = 302.000000000000000000
+        Size.Height = 262.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Symbols'
+        TabOrder = 12
+        ContentSize = '237'
+        object loSubgroup1: TLayout
+          Align = Top
+          HitTest = True
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 11
+          object cbSubgroup1: TComboBox
+            DropDownCount = 20
+            Locked = True
+            Hint = 'Symbol of subgroup 1'
+            Items.Strings = (
+              #9675
+              #9679
+              #9723
+              #9724
+              #9671
+              #9670
+              #9651
+              #9650
+              #9661
+              #9660)
+            ItemIndex = 0
+            Position.X = 96.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+          object tbSubgroup1: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.500000000000000000
+            Locked = True
+            Hint = 'Thickness of subgroup 1 symbol lines'
+            Max = 20.000000000000000000
+            Min = 2.000000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 9.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object ccbSubgroup1: TComboColorBox
+            Color = xFFA53E34
+            Locked = True
+            Hint = 
+              'Subgroup 1 symbol color, right click to choose from preset color' +
+              's'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object cbSubgroupV1: TCheckBox
+            Locked = True
+            Hint = 
+              'All the symbols have the same size; uncheck to allow changing su' +
+              'bgroup symbol size individually'
+            IsChecked = True
+            Position.Y = 2.000000000000000000
+            Size.Width = 88.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Subgroup 1'
+            OnChange = SubgroupVisibleChange
+          end
+        end
+        object loSubgroup2: TLayout
+          Tag = 1
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 9
+          object cbSubgroup2: TComboBox
+            Tag = 1
+            DropDownCount = 20
+            Locked = True
+            Hint = 'Symbol of subgroup 2'
+            Items.Strings = (
+              #9675
+              #9679
+              #9723
+              #9724
+              #9671
+              #9670
+              #9651
+              #9650
+              #9661
+              #9660)
+            ItemIndex = 0
+            Position.X = 96.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+          object tbSubgroup2: TTrackBar
+            Tag = 1
+            CanParentFocus = True
+            Frequency = 0.500000000000000000
+            Locked = True
+            Hint = 'Thickness of subgroup 2 symbol lines'
+            Max = 20.000000000000000000
+            Min = 2.000000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 9.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object ccbSubgroup2: TComboColorBox
+            Tag = 1
+            Color = xFF2D4E9A
+            Locked = True
+            Hint = 
+              'Subgroup 2 symbol color, right click to choose from preset color' +
+              's'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object cbSubgroupV2: TCheckBox
+            Tag = 1
+            Locked = True
+            Hint = 
+              'All the symbols have the same size; uncheck to allow changing su' +
+              'bgroup symbol size individually'
+            IsChecked = True
+            Position.Y = 2.000000000000000000
+            Size.Width = 88.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Subgroup 2'
+            OnChange = SubgroupVisibleChange
+          end
+        end
+        object loSubgroup3: TLayout
+          Tag = 2
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 60.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object cbSubgroup3: TComboBox
+            Tag = 2
+            DropDownCount = 20
+            Locked = True
+            Hint = 'Symbol of subgroup 3'
+            Items.Strings = (
+              #9675
+              #9679
+              #9723
+              #9724
+              #9671
+              #9670
+              #9651
+              #9650
+              #9661
+              #9660)
+            ItemIndex = 0
+            Position.X = 96.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+          object tbSubgroup3: TTrackBar
+            Tag = 2
+            CanParentFocus = True
+            Frequency = 0.500000000000000000
+            Locked = True
+            Hint = 'Thickness of subgroup 3 symbol lines'
+            Max = 20.000000000000000000
+            Min = 2.000000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 9.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object ccbSubgroup3: TComboColorBox
+            Tag = 2
+            Color = claDarkgreen
+            Locked = True
+            Hint = 
+              'Subgroup 3 symbol color, right click to choose from preset color' +
+              's'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object cbSubgroupV3: TCheckBox
+            Tag = 2
+            Locked = True
+            Hint = 
+              'All the symbols have the same size; uncheck to allow changing su' +
+              'bgroup symbol size individually'
+            IsChecked = True
+            Position.Y = 2.000000000000000000
+            Size.Width = 88.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Subgroup 3'
+            OnChange = SubgroupVisibleChange
+          end
+        end
+        object loSubgroup4: TLayout
+          Tag = 3
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 90.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+          object cbSubgroup4: TComboBox
+            Tag = 3
+            DropDownCount = 20
+            Locked = True
+            Hint = 'Symbol of subgroup 4'
+            Items.Strings = (
+              #9675
+              #9679
+              #9723
+              #9724
+              #9671
+              #9670
+              #9651
+              #9650
+              #9661
+              #9660)
+            ItemIndex = 0
+            Position.X = 96.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+          object tbSubgroup4: TTrackBar
+            Tag = 3
+            CanParentFocus = True
+            Frequency = 0.500000000000000000
+            Locked = True
+            Hint = 'Thickness of subgroup 4 symbol lines'
+            Max = 20.000000000000000000
+            Min = 2.000000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 9.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object ccbSubgroup4: TComboColorBox
+            Tag = 3
+            Color = claDarkmagenta
+            Locked = True
+            Hint = 
+              'Subgroup 4 symbol color, right click to choose from preset color' +
+              's'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object cbSubgroupV4: TCheckBox
+            Tag = 3
+            Locked = True
+            Hint = 
+              'All the symbols have the same size; uncheck to allow changing su' +
+              'bgroup symbol size individually'
+            IsChecked = True
+            Position.Y = 2.000000000000000000
+            Size.Width = 88.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Subgroup 4'
+            OnChange = SubgroupVisibleChange
+          end
+        end
+        object loSubgroup5: TLayout
+          Tag = 4
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          object cbSubgroup5: TComboBox
+            Tag = 4
+            DropDownCount = 20
+            Locked = True
+            Hint = 'Symbol of subgroup 5'
+            Items.Strings = (
+              #9675
+              #9679
+              #9723
+              #9724
+              #9671
+              #9670
+              #9651
+              #9650
+              #9661
+              #9660)
+            ItemIndex = 0
+            Position.X = 96.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+          object tbSubgroup5: TTrackBar
+            Tag = 4
+            CanParentFocus = True
+            Frequency = 0.500000000000000000
+            Locked = True
+            Hint = 'Thickness of subgroup 6 symbol lines'
+            Max = 20.000000000000000000
+            Min = 2.000000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 9.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object ccbSubgroup5: TComboColorBox
+            Tag = 4
+            Color = claOlive
+            Locked = True
+            Hint = 
+              'Subgroup 5 symbol color, right click to choose from preset color' +
+              's'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object cbSubgroupV5: TCheckBox
+            Tag = 4
+            Locked = True
+            Hint = 
+              'All the symbols have the same size; uncheck to allow changing su' +
+              'bgroup symbol size individually'
+            IsChecked = True
+            Position.Y = 2.000000000000000000
+            Size.Width = 88.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Subgroup 5'
+            OnChange = SubgroupVisibleChange
+          end
+        end
+        object loSubgroup6: TLayout
+          Tag = 5
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 150.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          object cbSubgroup6: TComboBox
+            Tag = 5
+            DropDownCount = 20
+            Locked = True
+            Hint = 'Symbol of subgroup 6'
+            Items.Strings = (
+              #9675
+              #9679
+              #9723
+              #9724
+              #9671
+              #9670
+              #9651
+              #9650
+              #9661
+              #9660)
+            ItemIndex = 0
+            Position.X = 96.000000000000000000
+            Size.Width = 44.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+          object tbSubgroup6: TTrackBar
+            Tag = 5
+            CanParentFocus = True
+            Frequency = 0.500000000000000000
+            Locked = True
+            Hint = 'Thickness of subgroup 5 symbol lines'
+            Max = 20.000000000000000000
+            Min = 2.000000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Value = 9.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+          object ccbSubgroup6: TComboColorBox
+            Tag = 5
+            Color = claDarkcyan
+            Locked = True
+            Hint = 
+              'Subgroup 6 symbol color, right click to choose from preset color' +
+              's'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object cbSubgroupV6: TCheckBox
+            Tag = 5
+            Locked = True
+            Hint = 
+              'All the symbols have the same size; uncheck to allow changing su' +
+              'bgroup symbol size individually'
+            IsChecked = True
+            Position.Y = 2.000000000000000000
+            Size.Width = 88.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+            Text = 'Subgroup 6'
+            OnChange = SubgroupVisibleChange
+          end
+        end
+        object cbSameSize: TCheckBox
+          Locked = True
+          Hint = 
+            'All the symbols have the same size; uncheck to allow changing su' +
+            'bgroup symbol size individually'
+          IsChecked = True
+          Position.X = 172.000000000000000000
+          Position.Y = -22.000000000000000000
+          Size.Width = 140.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'Same size symbols'
+          OnChange = cbSameSizeChange
+        end
+        object loOverrideSymbol: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 180.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          object ccbDotColor: TComboColorBox
+            Color = xD0000000
+            Locked = True
+            Hint = 'Grid line color, right click to choose from preset colors'
+            Position.X = 144.000000000000000000
+            Size.Width = 64.000000000000000000
+            Size.Height = 22.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+            OnMouseDown = ccbMouseDown
+          end
+          object cbDotColor: TCheckBox
+            Locked = True
+            Hint = 'Override colors of dots'
+            Position.Y = 1.000000000000000000
+            Size.Width = 124.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'Override color:'
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = drawSettingsChange
+          end
+        end
+        object loSymbolLine: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 210.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 15
+          object lbSymbolLine: TLabel
+            AutoSize = True
+            Locked = True
+            Position.Y = 1.000000000000000000
+            Size.Width = 97.000000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Symbol line width:'
+            TabOrder = 0
+          end
+          object tbSymbolLine: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.250000000000000000
+            Locked = True
+            Hint = 'Thickness of symbol lines'
+            Max = 8.000000000000000000
+            Min = 0.250000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Value = 3.000000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+        end
+      end
+      object expdGaps: TExpander
+        Align = Top
+        EnableDragHighlight = False
+        Padding.Bottom = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.Y = 200.000000000000000000
+        ShowCheck = False
+        Size.Width = 302.000000000000000000
+        Size.Height = 105.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Gaps and options'
+        TabOrder = 10
+        OnCheckChange = drawSettingsChange
+        ContentSize = '80'
+        object loGroupGaps: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object lbGroupGaps: TLabel
+            AutoSize = True
+            Locked = True
+            Position.Y = 1.000000000000000000
+            Size.Width = 64.500000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Group gaps:'
+            TabOrder = 16
+          end
+          object tbGroupGaps: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.010000000000000000
+            Locked = True
+            Hint = 'Distance between two groups, % of group width'
+            Max = 0.800000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            Value = 0.350000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+        end
+        object loSubgroupGaps: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 26.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 10
+          object lbSubgroupGaps: TLabel
+            AutoSize = True
+            Locked = True
+            Position.Y = 1.000000000000000000
+            Size.Width = 78.500000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Subgroup gap:'
+            TabOrder = 17
+          end
+          object tbSubgroupGaps: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.010000000000000000
+            Locked = True
+            Hint = 'Distance between two subgroups, % of subgroup width'
+            Max = 1.000000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            Value = 0.200000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnTracking = edSettingsChange
+            OnClick = tbSettingsClick
+          end
+        end
+        object loSymbolMinGap: TLayout
+          Align = Top
+          Margins.Left = 4.000000000000000000
+          Margins.Right = 4.000000000000000000
+          Position.X = 4.000000000000000000
+          Position.Y = 52.000000000000000000
+          Size.Width = 294.000000000000000000
+          Size.Height = 26.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          object lbSymbolMinGap: TLabel
+            AutoSize = True
+            Locked = True
+            Position.Y = 1.000000000000000000
+            Size.Width = 65.500000000000000000
+            Size.Height = 16.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.WordWrap = False
+            TextSettings.Trimming = None
+            Text = 'Symbol gap:'
+            TabOrder = 0
+          end
+          object tbSymbolMinGap: TTrackBar
+            CanParentFocus = True
+            Frequency = 0.100000000000000000
+            Locked = True
+            Hint = 'Minimal gaps between symbols, % of symbol size'
+            Max = 3.000000000000000000
+            Min = 0.250000000000000000
+            Orientation = Horizontal
+            Position.X = 210.000000000000000000
+            Position.Y = 1.000000000000000000
+            Size.Width = 100.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Value = 0.800000000000000000
+            ParentShowHint = False
+            ShowHint = True
+            OnChange = tbSettingsChange
+            OnClick = tbSettingsClick
+          end
+        end
+      end
+      object loTheme: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 90.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        object cbThemes: TComboBox
+          DropDownCount = 20
+          Locked = True
+          Hint = 'Symbol of subgroup 6'
+          ItemIndex = 0
+          Position.X = 60.000000000000000000
+          Size.Width = 250.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = cbThemesChange
+        end
+        object lbThemes: TLabel
+          AutoSize = True
+          Locked = True
+          Hint = 'Double click to show/hide a subgroup'
+          HitTest = True
+          Position.Y = 3.000000000000000000
+          Size.Width = 44.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.WordWrap = False
+          TextSettings.Trimming = None
+          Text = 'Themes:'
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          OnDblClick = lbSubgroup6DblClick
+        end
+      end
+      object loOptions: TLayout
+        Align = Top
+        Margins.Left = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Position.X = 4.000000000000000000
+        Position.Y = 176.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        object cbFillBackground: TCheckBox
+          Locked = True
+          Hint = 'Fill the image background with white color or not.'
+          Position.X = 200.000000000000000000
+          Size.Width = 100.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Background'
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = drawSettingsChange
+        end
+        object cbShowAllPoints: TCheckBox
+          Locked = True
+          Hint = 
+            'Show all points in box plot, otherwise only the outliners are sh' +
+            'own.'
+          IsChecked = True
+          Position.X = 100.000000000000000000
+          Size.Width = 100.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'All points'
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = drawSettingsChange
+        end
+        object cbShowOnlyMeans: TCheckBox
+          Locked = True
+          Hint = 'Show a column from 0 to Mean'
+          Size.Width = 100.000000000000000000
+          Size.Height = 20.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Means only'
+          ParentShowHint = False
+          ShowHint = True
+          OnChange = cbShowOnlyMeansChange
+        end
+      end
+    end
+    object lbMessage: TLabel
+      Align = MostBottom
+      Margins.Left = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 542.000000000000000000
+      Size.Width = 314.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.VertAlign = Leading
+      TextSettings.Trimming = None
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 12
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = 'svg'
+    Filter = 
+      'Scalable Vector Graphics files (*.svg)|*.svg|Portable Network Gr' +
+      'aphics files (*.png)|*.png|TIFF files (*.tif; *.tiff)|*.tif;*.ti' +
+      'ff|JPEG files (*.jpg; *.jpeg)|*.jpg;*.jpeg|All files (*.*)|*.*'
+    Options = [ofOverwritePrompt, ofHideReadOnly, ofPathMustExist, ofNoReadOnlyReturn, ofEnableSizing]
+    Left = 543
+    Top = 272
+  end
+  object loPlot: TLayout
+    Align = Client
+    Size.Width = 697.000000000000000000
+    Size.Height = 562.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object imPlot: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      Size.Width = 697.000000000000000000
+      Size.Height = 562.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = imPlotClick
+    end
+  end
+  object spTop: TSplitter
+    Align = Top
+    Cursor = crVSplit
+    MinSize = 200.000000000000000000
+    Margins.Top = 1.000000000000000000
+    Margins.Bottom = 1.000000000000000000
+    Position.Y = 253.000000000000000000
+    Size.Width = 1024.000000000000000000
+    Size.Height = 6.000000000000000000
+    Size.PlatformDefault = False
+    OnMouseUp = spTopMouseUp
+  end
+  object Panel1: TPanel
+    Align = Left
+    Margins.Bottom = 8.000000000000000000
+    Position.X = 326.000000000000000000
+    Position.Y = 260.000000000000000000
+    Size.Width = 1.000000000000000000
+    Size.Height = 554.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+  end
+  object loMenu: TLayout
+    Align = MostTop
+    Padding.Left = 4.000000000000000000
+    Padding.Right = 4.000000000000000000
+    Size.Width = 1024.000000000000000000
+    Size.Height = 32.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    object btnPaste: TButton
+      Align = Left
+      Hint = 'If you want grouping, including one row of group name'
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 96.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Paste data'
+      TextSettings.Trimming = None
+      OnClick = btnPasteClick
+    end
+    object btnGomesAll: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 216.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 96.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Gomes dots'
+      TextSettings.Trimming = None
+      OnClick = btnGomesAllClick
+    end
+    object btnMTOC: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 320.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 96.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'MTOC preset'
+      TextSettings.Trimming = None
+      OnClick = btnMTOCClick
+    end
+    object btnClose: TButton
+      Align = Right
+      Hint = 'Quit'
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 936.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 11
+      Text = 'Close'
+      TextSettings.Trimming = None
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnCloseClick
+    end
+    object btnSavePNG: TButton
+      Align = Right
+      Hint = 'Save double-sized image to a PNG (pixel-based) image file'
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 848.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      Text = 'Save PNG'
+      TextSettings.Trimming = None
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnSavePNGClick
+    end
+    object btnRemoveEntry: TButton
+      Align = Left
+      Hint = 'If you want grouping, including one row of group name'
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Remove entry'
+      TextSettings.Trimming = None
+      Visible = False
+    end
+    object btnAddEntry: TButton
+      Align = Left
+      Hint = 'If you want grouping, including one row of group name'
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Add entry'
+      TextSettings.Trimming = None
+      Visible = False
+    end
+    object btnUpdateEntry: TButton
+      Align = Left
+      Hint = 'If you want grouping, including one row of group name'
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Update entry'
+      TextSettings.Trimming = None
+      Visible = False
+    end
+    object btnSaveSVG: TButton
+      Align = Right
+      Hint = 'Save image to a SVG vector file'
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 760.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Save SVG'
+      TextSettings.Trimming = None
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnSaveSVGClick
+    end
+    object btnCopyImage: TButton
+      Align = Right
+      Hint = 'Save image to a SVG vector file'
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 672.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      Text = 'Copy image'
+      TextSettings.Trimming = None
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnCopyImageClick
+    end
+    object btnGomesClassic: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 112.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 96.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Gomes classic'
+      TextSettings.Trimming = None
+      OnClick = btnGomesClassicClick
+    end
+    object btnFRAP: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 424.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 96.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'FRAP preset'
+      TextSettings.Trimming = None
+      OnClick = btnFRAPClick
+    end
+  end
+  object memoInput: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      'Nucleus'#9'Centrosome'#9'Nucleus'#9'Centrosome'#9'Nucleus'#9'Centrosome'
+      '-30.01'#9'2.9'#9'6.61'#9'3.53'#9'-44.43'#9'11.59'
+      '-16.15'#9'-12.74'#9'-18.21'#9'3.11'#9'-5.04'#9'-25.2'
+      '-30.63'#9'-19.5'#9'-16.92'#9'4.42'#9'-42.38'#9'6.03'
+      '-4.93'#9'9.23'#9'4.17'#9'8.44'#9'-21'#9'-7.2'
+      '-6.46'#9'24.58'#9'-9.23'#9'3.83'#9'-1.7'#9'-3.96'
+      '-15.27'#9'-5.39'#9'-6.65'#9'-2.53'#9'-30.87'#9'-13.92'
+      '-56.34'#9'-4.43'#9'26.07'#9'9.51'#9'-18.43'#9'12.75'
+      '-21.11'#9'-10.55'#9'-39.69'#9'0.09'#9'-14.54'#9'5.43'
+      '-11.58'#9'-6.73'#9'-25.14'#9'19.2'#9'0.35'#9'-15.68'
+      '-21.94'#9'-3.7'#9'-12.4'#9'-15.01'#9'-16.87'#9'-3.05'
+      '-52.79'#9'3.14'#9'24.04'#9'-5.81'#9'-12.34'#9'-5.12'
+      '-12.07'#9'-12.49'#9'-4.75'#9'-7.18'#9'-13.27'#9'17.25'
+      '3.92'#9'7.24'#9'-22.57'#9'-7.87'#9'-0.3'#9'1.86'
+      '-32.87'#9'-6.78'#9'-3.42'#9'7.77'#9'-3.21'#9'-10.91'
+      '-11.57'#9'20.92'#9'-6.2'#9'2.07'#9'-19.98'#9'-6.65'
+      '-3.78'#9'-8.8'#9'-3.16'#9'-4.75'#9'-24.95'#9'-3.31'
+      '-2.35'#9'-1.98'#9'-6.1'#9'-5.3'#9'-22.61'#9'-5.77'
+      '-46.25'#9'-3.82'#9'-25.8'#9'-4.7'#9'-18.87'#9'12.43'
+      '13.9'#9'2.42'#9'-23.69'#9'11.13'#9'-19.37'#9'-16.23'
+      '-13.44'#9'-27.17'#9'3.24'#9'17.13'#9'-38.09'#9'-4.94'
+      '-47.13'#9'9.31'#9'6.59'#9'0.54'#9'-23.87'#9'-1.72'
+      '-32.55'#9'-3.88'#9'25.66'#9'-1.74'#9'-34.65'#9'-10.25'
+      '-47.09'#9'-2.85'#9'-17.91'#9'-12.56'#9'-29.02'#9'-19.27'
+      '-4.8'#9'6.68'#9'-21.32'#9'-17.73'#9'-31.85'#9'-3.79'
+      '-45.12'#9'3.29'#9'16.26'#9'-13.08'#9'-29.06'#9'8.37'
+      '-27.71'#9'-7.26'#9'-15.59'#9'4.58'#9'-37.87'#9'6.79'
+      '-11.05'#9'-1.47'#9'-6.45'#9'7.66'#9'-24.92'#9'11.85'
+      '-22.83'#9'0.89'#9'-11.75'#9'1.07'#9'-12.97'#9'-15.32'
+      '-10.99'#9'0.83'#9'-23.41'#9'3.55'#9'1.8'#9'3.13'
+      '-8.35'#9'7.84'#9'-17.61'#9'6.71'#9'-3.4'#9'-1.84'
+      '-16.07'#9'-4.99'#9'-10.07'#9'-19.94'#9'-9.96'#9'-2.92'
+      '-38.1'#9'-6.26'#9'2.62'#9'2.39'#9'-23.18'#9'0.71'
+      #9#9'42.88'#9'-13.88'#9'-9.56'#9'-5.09'
+      #9#9'15.82'#9'4.76'#9'-9.96'#9'11.65'
+      #9#9#9#9'-30.17'#9'20.8'
+      #9#9#9#9#9
+      '23.1'#9'-8.33'#9'3.6'#9'8.35'#9'-36.82'#9'-3.19'
+      '-31.65'#9'18.53'#9'-19.89'#9'17.06'#9'-46.33'#9'5.84'
+      '-43.97'#9'-8.6'#9'0.13'#9'1.34'#9'5.02'#9'8.5'
+      '-25.26'#9'1.24'#9'-11.33'#9'-16.91'#9'-12.77'#9'-19.52'
+      '-37.78'#9'-6.84'#9'6.24'#9'0.31'#9'-24.77'#9'-26.84'
+      '-1.61'#9'8.46'#9'-15.52'#9'-3.38'#9'-56.32'#9'13.06'
+      '-37.68'#9'21.8'#9'15.67'#9'-3.24'#9'-28.16'#9'11.97'
+      '-23.11'#9'19.96'#9'-8.33'#9'-5.01'#9'-22.4'#9'9.1'
+      '-20.81'#9'12.84'#9'-17.59'#9'-14.98'#9'-40.41'#9'-22.45'
+      '-18.14'#9'-1.54'#9'-5.27'#9'7.19'#9'-26.24'#9'17.92'
+      '-21.46'#9'-23.74'#9'-13.89'#9'-12.72'#9'31.52'#9'-16.19'
+      '-21.77'#9'3.85'#9'-4.04'#9'-0.39'#9'28.86'#9'-6.06'
+      '-12.37'#9'-25.23'#9'-23.33'#9'-13.87'#9'-23.68'#9'-38.74'
+      '-19.79'#9'-2.93'#9'-7.01'#9'-4.45'#9'-19.53'#9'-32'
+      '-37.14'#9'-8.71'#9'-3.8'#9'-9.19'#9'-26.24'#9'-21.23'
+      '-51.84'#9'-5.24'#9'1.83'#9'3.91'#9'-38.85'#9'-15.86'
+      '3.93'#9'3.25'#9'5'#9'-1.09'#9'-8.35'#9'-11'
+      '-10.54'#9'-13.33'#9'-9.62'#9'3.42'#9'-8.39'#9'0.75'
+      '-17.06'#9'3.29'#9'-14.99'#9'-1.66'#9'-32.85'#9'-4.17'
+      '-14.79'#9'6.12'#9'-2.8'#9'-5.07'#9'-60.8'#9'19.41'
+      '-29.22'#9'-4.7'#9'-20.1'#9'7.21'#9'-18.63'#9'2.2'
+      '-6.2'#9'-1.48'#9'-6.37'#9'0.92'#9'25.29'#9'-1.28'
+      '-21.28'#9'7.16'#9'7.24'#9'10.13'#9'-23.91'#9'0.12'
+      '-23.02'#9'1.61'#9'9.93'#9'-0.39'#9'-22.74'#9'7.49'
+      '-14.75'#9'6.52'#9'-16.09'#9'-7.05'#9'-38.65'#9'-11.49'
+      '-43.6'#9'-4.46'#9'-11.06'#9'7.02'#9'-50.37'#9'17.42'
+      '-16.11'#9'-9.03'#9'2.91'#9'-4.65'#9'-13.18'#9'8.1'
+      '-32.05'#9'-2.25'#9'-23.45'#9'15.41'#9'-2.47'#9'-3.01'
+      '-61.2'#9'10.55'#9'-15.73'#9'5.91'#9'-24.48'#9'26.34'
+      '-33.63'#9'-17.06'#9'-7.44'#9'-16.96'#9'-37.57'#9'12.77'
+      #9#9'-15.65'#9'-7.81'#9'-34.53'#9'4.19'
+      #9#9#9#9'19.01'#9'11.64'
+      #9#9#9#9'-46.13'#9'-48.93'
+      #9#9#9#9'-23.37'#9'21.16'
+      #9#9#9#9#9
+      '7.19'#9'-16.31'#9'-10.58'#9'-17.75'#9'-32.76'#9'-4.58'
+      '-33.44'#9'-8.87'#9'19.21'#9'2.51'#9'-11.14'#9'-0.68'
+      '-12.53'#9'-7.67'#9'-21.63'#9'6.51'#9'-50.28'#9'-2.22'
+      '-3.12'#9'-21.21'#9'-15.97'#9'6.02'#9'-7.23'#9'15.54'
+      '11.05'#9'-7.65'#9'-21.56'#9'5.05'#9'-39.59'#9'-1.64'
+      '-40.69'#9'-2.36'#9'8.24'#9'-16.49'#9'-36.47'#9'4.4'
+      '-18.64'#9'-12.18'#9'22.62'#9'4.66'#9'3.23'#9'-1.09'
+      '-50.53'#9'-24.51'#9'16.71'#9'5.47'#9'-40.98'#9'-1.29'
+      '-22.18'#9'14.04'#9'-31.44'#9'6.39'#9'-18.73'#9'-12.67'
+      '-5.77'#9'1.63'#9'-13.61'#9'-2.32'#9'-34.17'#9'-16.73'
+      '0.96'#9'-16.59'#9'7.07'#9'-2.86'#9'-24.29'#9'14.11'
+      '-28.81'#9'8'#9'-15.55'#9'7.57'#9'-37.39'#9'-21.82'
+      '-47.76'#9'3.44'#9'0.98'#9'7.24'#9'-13.82'#9'-4.15'
+      '-47.59'#9'-25.71'#9'-2.29'#9'8.45'#9'-20.2'#9'-12.9'
+      '-31.2'#9'-15.35'#9'-9.31'#9'10.28'#9'-19.33'#9'-0.91'
+      '-7.63'#9'-14.69'#9'-4.18'#9'-23.58'#9'-21.55'#9'20.15'
+      '-21.63'#9'-0.14'#9'-4.36'#9'1.06'#9'17.76'#9'6.27'
+      '-10.88'#9'4.96'#9'-12.92'#9'-2.15'#9'-31.42'#9'2.75'
+      '-8.45'#9'5.77'#9'-23.1'#9'0.86'#9'-15.76'#9'-13.27'
+      '-58.02'#9'-0.06'#9'9.13'#9'6.59'#9'-40.89'#9'13.02'
+      '-26.71'#9'-11.71'#9'6.27'#9'6.13'#9'-58.38'#9'-11.99'
+      '-17.42'#9'15.36'#9'4.44'#9'-14.28'#9'-34.95'#9'-6.02'
+      '-8.29'#9'7.22'#9'-18.06'#9'13.51'#9'14.21'#9'-11.84'
+      '-22.03'#9'-2.61'#9'-25.21'#9'-0.05'#9'-10.92'#9'0.45'
+      '8.55'#9'30.88'#9'24.87'#9'-2.3'#9'-16.78'#9'-13.95'
+      '-41.41'#9'-9.06'#9'-20.23'#9'-9.8'#9'-15.86'#9'11.24'
+      '-12.26'#9'-10.4'#9'30.36'#9'-4.7'#9'9.81'#9'-25.67'
+      '-21.71'#9'17.62'#9'-12.17'#9'-7.5'#9'-5.74'#9'6.86'
+      '-2.88'#9'9.21'#9'4.36'#9'10.7'#9'19.12'#9'7.89'
+      '-34.45'#9'-12.55'#9'6.82'#9'2.8'#9'-53.08'#9'-7.34'
+      '-21.12'#9'-15.56'#9'-26.64'#9'-8.37'#9'-18.15'#9'-8.51'
+      '3.75'#9'24.78'#9#9#9#9
+      '13.78'#9'17.02'#9#9#9#9
+      '7.61'#9'-13.5'#9#9#9#9)
+    ShowScrollBars = False
+    StyledSettings = [Size, Style, FontColor]
+    TextSettings.Font.Family = 'Courier New'
+    OnChange = memoInputChange
+    Position.X = 340.000000000000000000
+    Position.Y = 272.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 199.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    ParentShowHint = False
+    ShowHint = True
+    Viewport.Width = 196.000000000000000000
+    Viewport.Height = 195.000000000000000000
+  end
+end
