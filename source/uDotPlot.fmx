@@ -1830,6 +1830,7 @@ object Form1: TForm1
         item
         end>
       Align = Client
+      PopupMenu = PopupMenu1
       Size.Width = 697.000000000000000000
       Size.Height = 562.000000000000000000
       Size.PlatformDefault = False
@@ -2187,5 +2188,17 @@ object Form1: TForm1
     ShowHint = True
     Viewport.Width = 196.000000000000000000
     Viewport.Height = 195.000000000000000000
+  end
+  object PopupMenu1: TPopupMenu
+    OnPopup = PopupMenu1Popup
+    Left = 575
+    Top = 272
+    object miPasteSettingsFromSVG: TMenuItem
+      Text = 'Copy settings from clipboard file'
+    end
+    object miPasteSizeFromSVG: TMenuItem
+      Text = 'Copy size from clipboard file'
+      OnClick = miPasteSizeFromSVGClick
+    end
   end
 end

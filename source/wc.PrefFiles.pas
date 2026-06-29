@@ -251,7 +251,7 @@ constructor TPrefFile.Create(const Company, AppID: string; ForSave: Boolean = Fa
 begin
   FFileName := TPath.Combine(TPath.GetHomePath, 'Library/Preferences/') +
                 ez.IfNotEmpty(Company, Company.ToLower + '.') +
-                ez.IfEmpty(AppID, TFilename(ParamStr(0)).ExtractOnlyFileName).Replace(' ', '-').ToLower +
+                ez.IfEmpty(AppID, string(ParamStr(0)).ExtractOnlyFileName).Replace(' ', '-').ToLower +
                 '.plist';
   // This is a fixed a random bug that newly create TCFPropertyList may failed to save
   if ForSave and not TFile.Exists(FFileName) then

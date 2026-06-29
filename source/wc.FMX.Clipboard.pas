@@ -79,7 +79,7 @@ type
     {$REGION 'GetClipboard'}
     class function  SequenceNumber: NInt;                                       static;
 
-    class function  GetFormats: TStringArray;                                static;
+    class function  GetFormats: TStringArray;                                   static;
     class function  HasFormat(const CF: string): Boolean;                       overload; static; inline;
     class function  GetFormatSize(const CF: string): NInt;                      overload; static; inline;
     class function  GetFormat(const CF: string; pTarget: Pointer): Boolean;     overload; static; inline;
@@ -89,6 +89,7 @@ type
 
     class function  HasText: Boolean;                                           static;
     class function  HasImage: Boolean;                                          static;
+    class function  HasSVGImage: Boolean;                                       static;
     class function  GetClipboard: TValue;                                       static;
     class function  GetText: string;                                            static;
     class function  GetImage: TBitmapSurface;                                   static;
@@ -572,6 +573,11 @@ begin
   finally
     AutoReleasePool.release;
   end;
+end;
+
+class function TClipboard.HasSVGImage: Boolean;
+begin
+  Result := HasFormat(CF_SVG) or HasFormat(CF_SVG2);
 end;
 
 class function TClipboard.GetText: string;
@@ -1142,6 +1148,11 @@ class function TClipboard.HasImage: Boolean;
 begin
   Result := IsClipboardFormatAvailable(CF_DIB) or
             IsClipboardFormatAvailable(CFIdentifier(CF_PNG));
+end;
+
+class function TClipboard.HasSVGImage: Boolean;
+begin
+  Result := HasFormat(CF_SVG);
 end;
 
 class function TClipboard.GetText: string;

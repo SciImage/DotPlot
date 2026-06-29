@@ -1101,6 +1101,8 @@ type
 
 {$REGION 'TStringHelper - All immutabale'}
   TFilename = SysUtils.TFileName;
+  TFileEvent     = procedure (Sender: TObject; const AFile: TFilename) of object;
+  TFilesEvent    = procedure (Sender: TObject; const Files: TFilenames) of object;
   TStringHelper = record helper for string
   {$REGION 'Delphi Built-in'}
   strict private

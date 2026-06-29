@@ -3,7 +3,7 @@ program DotPlot;
 {$I wc.Base.inc}
 
 uses
-  System.StartUpCopy,
+  System.StartUpCopy, Xml.xmldom, Xml.omnixmldom,
   FMX.Forms,
   uDotPlot in 'uDotPlot.pas' {Form1},
   uDataSet in 'uDataSet.pas',
@@ -15,6 +15,7 @@ uses
 {$R *.res}
 
 begin
+  DefaultDOMVendor := sOmniXmlVendor;
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
   Application.Run;
