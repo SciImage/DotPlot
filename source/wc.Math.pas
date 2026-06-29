@@ -1522,7 +1522,7 @@ begin
   if Length = 0 then Exception.RaiseEmptyArrayError;
   if (Percent < 0) and (Percent > 1) then Exception.RaisePercentRangeError(Percent);
   if Length = 1 then Exit(Self[0]);
-  d := (Floats.Length - 1) * Percent;
+  d := (Length - 1) * Percent;
   n := Trunc(d);
 
   if IsSorted
@@ -1538,7 +1538,7 @@ var
   Floats: TFloat64s;
 begin
   if Length = 0 then Exception.RaiseEmptyArrayError;
-  d := Floats.Length * Percent - 1;
+  d := Length * Percent - 1;
   n := Floor(d);
   if (n < 0) or (n >= Length - 1) then Exception.RaisePercentRangeError(Percent);
 
