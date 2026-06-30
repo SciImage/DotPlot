@@ -15,6 +15,7 @@ uses
 type
   TForm1 = class(TForm)
     {$REGION 'Components'}
+    SaveDialog1: TSaveDialog;
     loMenu: TLayout;
       lbEntry: TListBox;
       btnUpdateEntry: TButton;
@@ -109,11 +110,7 @@ type
     loPlot: TLayout;
       imPlot: TImage;
     memoInput: TMemo;
-    SaveDialog1: TSaveDialog;
     btnFRAP: TButton;
-    PopupMenu1: TPopupMenu;
-    miPasteSettingsFromSVG: TMenuItem;
-    miPasteSizeFromSVG: TMenuItem;
     {$ENDREGION}
     {$REGION 'UI Events'}
     procedure FormCreate(Sender: TObject);
@@ -161,8 +158,6 @@ type
     procedure SubgroupVisibleChange(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnFRAPClick(Sender: TObject);
-    procedure miPasteSizeFromSVGClick(Sender: TObject);
-    procedure PopupMenu1Popup(Sender: TObject);
     {$ENDREGION}
   private
     {$REGION 'Private variables'}
@@ -475,32 +470,6 @@ end;
 procedure TForm1.memoInputChange(Sender: TObject);
 begin
   InputChanged;
-end;
-
-procedure TForm1.PopupMenu1Popup(Sender: TObject);
-begin
-  miPasteSizeFromSVG.Enabled     := TClipboard.HasSVGImage;
-  miPasteSettingsFromSVG.Enabled := miPasteSizeFromSVG.Enabled;
-end;
-
-procedure TForm1.miPasteSizeFromSVGClick(Sender: TObject);
-begin
-  var s := TClipboard.GetSVGImage;
-  if s = '' then Exit;
-
-  BeginUIChange;
-  try
-  var XMLDoc: IXMLDocument;
-  XMLDoc := LoadXMLData(s);
-  var Node: IXMLNode;
-  Node := XMLDoc.DocumentElement;
-  if Node.HasAttribute('width') then
-    edWidth.Text := Node.Attributes['width'];
-  if Node.HasAttribute('height') then
-    edHeight.Text := Node.Attributes['height'];
-  finally
-    EndUIChange(False);
-  end;
 end;
 
 procedure TForm1.spTopMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);

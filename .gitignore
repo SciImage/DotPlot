@@ -63,6 +63,7 @@ Linux64/
 *Resource.rc
 Entitlement.TemplateOSX.xml
 info.plist.TemplateOSX.xml
+*.deployproj
 
 # Delphi local files (user-specific info)
 *.local

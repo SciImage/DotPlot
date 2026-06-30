@@ -1006,7 +1006,7 @@ begin
   while pS < pE do
   begin
     if pS^ = c then Exit(pS - p);
-    inc(p);
+    inc(pS);
   end;
   Result := -1;
 end;
@@ -1020,7 +1020,7 @@ begin
   while pS < pE do
   begin
     if pS^ = c then Exit(pS - p);
-    inc(p);
+    inc(pS);
   end;
   Result := -1;
 end;
