@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'DotPlot v0.20 '#946
+  Caption = 'DotPlot v1.0.0'
   ClientHeight = 822
   ClientWidth = 1024
   Constraints.MinHeight = 640.000000000000000000

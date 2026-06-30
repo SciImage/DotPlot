@@ -61,6 +61,8 @@ Linux64/
 *.cfg
 *.hpp
 *Resource.rc
+Entitlement.TemplateOSX.xml
+info.plist.TemplateOSX.xml
 
 # Delphi local files (user-specific info)
 *.local
